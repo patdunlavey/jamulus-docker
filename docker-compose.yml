@@ -1,0 +1,19 @@
+---
+version: "3.7"
+services:
+  jamulus:
+    container_name: jamulus
+    image: grundic/jamulus
+    restart: always
+    ports:
+      - "22124:22124/udp"
+    environment:
+      TZ: "America/New_York"  
+    entrypoint:
+      - "Jamulus"
+      - "--server"
+      - "--nogui"
+      - "--welcomemessage"
+      - "Welcome to the Rosin The Beaux Jamulus rehearsal room"
+      - "--numchannels"
+      - "16"
